@@ -15,6 +15,7 @@ logging:
 
 # 七牛SDK
 qiniu:
-  accessKey: _RizkuksT8zFWFJRIH2Zy4gUyJm6FHamCyClHA3-
-  secretKey: lQOCfs3draz6fecrPT3kiBSLyNCnmQGZKAjcREPO
+  accessKey: 5eoVeFNjB8cBPEarqdIRR5dJlI7UEk2oGNgyXCtK
+  secretKey: jgqC8ngWdMj7UveD8HOBhPnAO8jDcxWDtwPydp6S
   bucket: graduationproject
+  domain: prn5kvu34.bkt.clouddn.com

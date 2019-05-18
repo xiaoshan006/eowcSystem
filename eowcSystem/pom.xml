@@ -82,6 +82,11 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>5.1.7.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>com.qiniu</groupId>
+			<artifactId>qiniu-java-sdk</artifactId>
+			<version>7.2.18</version>
+		</dependency>
 
 	</dependencies>
 

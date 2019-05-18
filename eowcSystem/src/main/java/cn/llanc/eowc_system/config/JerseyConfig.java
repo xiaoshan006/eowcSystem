@@ -1,5 +1,6 @@
 package cn.llanc.eowc_system.config;
 
+import cn.llanc.eowc_system.controller.FileUploadAPI;
 import cn.llanc.eowc_system.controller.FrontDeskSettingAPI;
 import cn.llanc.eowc_system.controller.LoginAPI;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -19,6 +20,6 @@ public class JerseyConfig extends ResourceConfig {
     public JerseyConfig() {
         register(LoginAPI.class);
         register(FrontDeskSettingAPI.class);
-
+        register(FileUploadAPI.class);
     }
 }

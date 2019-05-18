@@ -11,6 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Map;
 
+import static cn.llanc.eowc_system.common.SystemConsts.UPDATE_INFO_ERROR;
+import static cn.llanc.eowc_system.common.SystemConsts.UPDATE_INFO_SUCCESS;
+
 /**
  * @author liulc
  * @ClassName FrontDeskSettingServiceImpl
@@ -24,6 +27,7 @@ public class FrontDeskSettingServiceImpl implements IFrontDeskSettingService {
 
     @Autowired
     CommonInfoMapper commonInfoMapper;
+
     /**
      * 更新信息
      * @param inparam
@@ -31,11 +35,21 @@ public class FrontDeskSettingServiceImpl implements IFrontDeskSettingService {
      */
     @Override
     public String updateInfos(Map inparam) {
-        return null;
+        //入参转对象
+        CommonInfo newInfo = (CommonInfo) MapEntityConvert.mapToObject(inparam, CommonInfo.class);
+        //设置主键
+        newInfo.setCId("1");
+        int count = commonInfoMapper.insertSelective(newInfo);
+        if (1 == count) {
+            return UPDATE_INFO_SUCCESS.getStateCode();
+        }
+        return UPDATE_INFO_ERROR.getStateCode();
     }
+
 
     /**
      * 数据回显
+     *
      * @return
      */
     @Override

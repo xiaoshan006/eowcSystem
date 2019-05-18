@@ -1,0 +1,10 @@
+
+qsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(ûéïÔ8õ·ªˆ¬-
+Wsquid:UselessImportCheck"-Remove this unused import 'org.slf4j.Logger'.(íØ®68õ·ªˆ¬-
+_squid:UselessImportCheck"4Remove this unused import 'org.slf4j.LoggerFactory'.(–ÿÚÞ8õ·ªˆ¬-
+Xsquid:S1161(":Add the "@Override" annotation above this method signature(‚“¶î8õ·ªˆ¬-
+Ÿsquid:S1186%"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ß¹¶¼8õ·ªˆ¬-
+Hsquid:S1135"2Complete the task associated to this TODO comment.(£°§\
+Xsquid:S1161%":Add the "@Override" annotation above this method signature(ß¹¶¼8õ·ªˆ¬-
+jsquid:UselessImportCheck"?Remove this unused import 'javax.servlet.annotation.WebFilter'.(ï¸Ýô8¶á«ˆ¬-
+Ÿsquid:S1186("€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8õ·ªˆ¬-

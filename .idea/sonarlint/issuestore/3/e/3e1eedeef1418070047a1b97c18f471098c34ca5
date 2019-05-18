@@ -1,0 +1,9 @@
+
+tsquid:S00116!"URename this field "ACCESS_KEY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ç·½ö8œ¾Ë©¬-
+tsquid:S00116""URename this field "SECRET_KEY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯ÊÃœ8œ¾Ë©¬-
+_squid:S3457I"AFormat specifiers should be used instead of string concatenation.(ñŞ8œ¾Ë©¬-
+hsquid:S30277"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(§Ğ–—8œ¾Ë©¬-
+€squid:S3008."]Rename this field "QINIU_IMAGE_DOMAIN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îèã¡ûÿÿÿÿ8œ¾Ë©¬-
+wsquid:UselessImportCheck"LRemove this unused import 'cn.llanc.eowc_system.common.InterfaceParamUtils'.(í…äë8•Í»ª¬-
+zsquid:S2629I"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ñŞ8œ¾Ë©¬-
+_squid:S3457N"AFormat specifiers should be used instead of string concatenation.(¨ìß•8œ¾Ë©¬-

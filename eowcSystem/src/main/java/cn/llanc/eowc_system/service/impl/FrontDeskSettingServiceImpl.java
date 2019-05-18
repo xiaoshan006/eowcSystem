@@ -1,0 +1,49 @@
+package cn.llanc.eowc_system.service.impl;
+
+import cn.llanc.eowc_system.common.MapEntityConvert;
+import cn.llanc.eowc_system.domain.CommonInfo;
+import cn.llanc.eowc_system.mapper.CommonInfoMapper;
+import cn.llanc.eowc_system.service.IFrontDeskSettingService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Map;
+
+/**
+ * @author liulc
+ * @ClassName FrontDeskSettingServiceImpl
+ * @Description 前台设置服务
+ * @date 2019/05/17
+ **/
+@Transactional
+@Slf4j
+@Service("IFrontDeskSettingService")
+public class FrontDeskSettingServiceImpl implements IFrontDeskSettingService {
+
+    @Autowired
+    CommonInfoMapper commonInfoMapper;
+    /**
+     * 更新信息
+     * @param inparam
+     * @return
+     */
+    @Override
+    public String updateInfos(Map inparam) {
+        return null;
+    }
+
+    /**
+     * 数据回显
+     * @return
+     */
+    @Override
+    public Map showInfos() {
+        CommonInfo commonInfo = commonInfoMapper.selectByPrimaryKey("1");
+        Map<String, Object> resultMap = MapEntityConvert.objectToMap(commonInfo);
+        return resultMap;
+    }
+
+
+}

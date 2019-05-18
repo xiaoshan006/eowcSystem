@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.llanc.eowc_system.mapper.CommonInfoMapper">
+  <resultMap id="BaseResultMap" type="cn.llanc.eowc_system.domain.CommonInfo">
+    <!--@mbg.generated-->
+    <id column="c_id" jdbcType="VARCHAR" property="cId" />
+    <result column="c_bar_show" jdbcType="VARCHAR" property="cBarShow" />
+    <result column="c_header_text" jdbcType="VARCHAR" property="cHeaderText" />
+    <result column="c_qq_href" jdbcType="VARCHAR" property="cQqHref" />
+    <result column="c_winxin_src" jdbcType="VARCHAR" property="cWinxinSrc" />
+    <result column="c_heard_logo" jdbcType="VARCHAR" property="cHeardLogo" />
+    <result column="c_footer_logo" jdbcType="VARCHAR" property="cFooterLogo" />
+    <result column="c_address" jdbcType="VARCHAR" property="cAddress" />
+    <result column="c_telephone" jdbcType="VARCHAR" property="cTelephone" />
+    <result column="c_mobile_phone" jdbcType="VARCHAR" property="cMobilePhone" />
+    <result column="c_email" jdbcType="VARCHAR" property="cEmail" />
+    <result column="c_company_name" jdbcType="VARCHAR" property="cCompanyName" />
+    <result column="c_footer_text" jdbcType="VARCHAR" property="cFooterText" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    c_id, c_bar_show, c_header_text, c_qq_href, c_winxin_src, c_heard_logo, c_footer_logo, 
+    c_address, c_telephone, c_mobile_phone, c_email, c_company_name, c_footer_text
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from common_info
+    where c_id = #{cId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from common_info
+    where c_id = #{cId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.llanc.eowc_system.domain.CommonInfo">
+    <!--@mbg.generated-->
+    insert into common_info (c_id, c_bar_show, c_header_text, 
+      c_qq_href, c_winxin_src, c_heard_logo, 
+      c_footer_logo, c_address, c_telephone, 
+      c_mobile_phone, c_email, c_company_name, 
+      c_footer_text)
+    values (#{cId,jdbcType=VARCHAR}, #{cBarShow,jdbcType=VARCHAR}, #{cHeaderText,jdbcType=VARCHAR}, 
+      #{cQqHref,jdbcType=VARCHAR}, #{cWinxinSrc,jdbcType=VARCHAR}, #{cHeardLogo,jdbcType=VARCHAR}, 
+      #{cFooterLogo,jdbcType=VARCHAR}, #{cAddress,jdbcType=VARCHAR}, #{cTelephone,jdbcType=VARCHAR}, 
+      #{cMobilePhone,jdbcType=VARCHAR}, #{cEmail,jdbcType=VARCHAR}, #{cCompanyName,jdbcType=VARCHAR}, 
+      #{cFooterText,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.llanc.eowc_system.domain.CommonInfo">
+    <!--@mbg.generated-->
+    insert into common_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cId != null">
+        c_id,
+      </if>
+      <if test="cBarShow != null">
+        c_bar_show,
+      </if>
+      <if test="cHeaderText != null">
+        c_header_text,
+      </if>
+      <if test="cQqHref != null">
+        c_qq_href,
+      </if>
+      <if test="cWinxinSrc != null">
+        c_winxin_src,
+      </if>
+      <if test="cHeardLogo != null">
+        c_heard_logo,
+      </if>
+      <if test="cFooterLogo != null">
+        c_footer_logo,
+      </if>
+      <if test="cAddress != null">
+        c_address,
+      </if>
+      <if test="cTelephone != null">
+        c_telephone,
+      </if>
+      <if test="cMobilePhone != null">
+        c_mobile_phone,
+      </if>
+      <if test="cEmail != null">
+        c_email,
+      </if>
+      <if test="cCompanyName != null">
+        c_company_name,
+      </if>
+      <if test="cFooterText != null">
+        c_footer_text,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cId != null">
+        #{cId,jdbcType=VARCHAR},
+      </if>
+      <if test="cBarShow != null">
+        #{cBarShow,jdbcType=VARCHAR},
+      </if>
+      <if test="cHeaderText != null">
+        #{cHeaderText,jdbcType=VARCHAR},
+      </if>
+      <if test="cQqHref != null">
+        #{cQqHref,jdbcType=VARCHAR},
+      </if>
+      <if test="cWinxinSrc != null">
+        #{cWinxinSrc,jdbcType=VARCHAR},
+      </if>
+      <if test="cHeardLogo != null">
+        #{cHeardLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="cFooterLogo != null">
+        #{cFooterLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="cAddress != null">
+        #{cAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cTelephone != null">
+        #{cTelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="cMobilePhone != null">
+        #{cMobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="cEmail != null">
+        #{cEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="cCompanyName != null">
+        #{cCompanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="cFooterText != null">
+        #{cFooterText,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.llanc.eowc_system.domain.CommonInfo">
+    <!--@mbg.generated-->
+    update common_info
+    <set>
+      <if test="cBarShow != null">
+        c_bar_show = #{cBarShow,jdbcType=VARCHAR},
+      </if>
+      <if test="cHeaderText != null">
+        c_header_text = #{cHeaderText,jdbcType=VARCHAR},
+      </if>
+      <if test="cQqHref != null">
+        c_qq_href = #{cQqHref,jdbcType=VARCHAR},
+      </if>
+      <if test="cWinxinSrc != null">
+        c_winxin_src = #{cWinxinSrc,jdbcType=VARCHAR},
+      </if>
+      <if test="cHeardLogo != null">
+        c_heard_logo = #{cHeardLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="cFooterLogo != null">
+        c_footer_logo = #{cFooterLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="cAddress != null">
+        c_address = #{cAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cTelephone != null">
+        c_telephone = #{cTelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="cMobilePhone != null">
+        c_mobile_phone = #{cMobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="cEmail != null">
+        c_email = #{cEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="cCompanyName != null">
+        c_company_name = #{cCompanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="cFooterText != null">
+        c_footer_text = #{cFooterText,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where c_id = #{cId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.llanc.eowc_system.domain.CommonInfo">
+    <!--@mbg.generated-->
+    update common_info
+    set c_bar_show = #{cBarShow,jdbcType=VARCHAR},
+      c_header_text = #{cHeaderText,jdbcType=VARCHAR},
+      c_qq_href = #{cQqHref,jdbcType=VARCHAR},
+      c_winxin_src = #{cWinxinSrc,jdbcType=VARCHAR},
+      c_heard_logo = #{cHeardLogo,jdbcType=VARCHAR},
+      c_footer_logo = #{cFooterLogo,jdbcType=VARCHAR},
+      c_address = #{cAddress,jdbcType=VARCHAR},
+      c_telephone = #{cTelephone,jdbcType=VARCHAR},
+      c_mobile_phone = #{cMobilePhone,jdbcType=VARCHAR},
+      c_email = #{cEmail,jdbcType=VARCHAR},
+      c_company_name = #{cCompanyName,jdbcType=VARCHAR},
+      c_footer_text = #{cFooterText,jdbcType=VARCHAR}
+    where c_id = #{cId,jdbcType=VARCHAR}
+  </update>
+</mapper>

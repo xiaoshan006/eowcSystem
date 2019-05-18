@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisCodeHelperDatasource">
+    <option name="lastUsedTestConfiguration">
+      <TestConfiguration>
+        <option name="driverClass" value="com.mysql.cj.jdbc.Driver" />
+        <option name="from" value="history" />
+        <option name="intellij" value="false" />
+        <option name="order" value="-1" />
+        <option name="password" value="root" />
+        <option name="url" value="jdbc:mysql://localhost:3306/eowcsystem?serverTimezone=UTC" />
+        <option name="userName" value="root" />
+      </TestConfiguration>
+    </option>
+    <option name="projectProfile">
+      <ProjectProfile>
+        <option name="addSerializeUid" value="true" />
+        <option name="javaMapperPackage" value="cn.llanc.eowc_system.mapper" />
+        <option name="javaMapperPath" value="$PROJECT_DIR$/eowcSystem/src/main/java" />
+        <option name="javaModelPackage" value="cn.llanc.eowc_system.domain" />
+        <option name="javaModelPath" value="$PROJECT_DIR$/eowcSystem/src/main/java" />
+        <option name="lastDatabaseCrudChooseModuleName" value="eowcSystem" />
+        <option name="lombokAnnotation" value="@GetterSetter" />
+        <option name="moduleNameToPackageAndPathMap">
+          <map>
+            <entry key="eowcSystem">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="cn.llanc.eowc_system.mapper" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/eowcSystem/src/main/java" />
+                  <option name="javaModelPacakge" value="cn.llanc.eowc_system.domain" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/eowcSystem/src/main/java" />
+                  <option name="xmlPackage" value="mapperxml" />
+                  <option name="xmlPath" value="$PROJECT_DIR$/eowcSystem/src/main/resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="tableGenerateConfigs">
+          <map>
+            <entry key="eowcsystem:common_info">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="CommonInfo" />
+                  <option name="moduleName" value="eowcSystem" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="eowcsystem:web_user">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="u_id" />
+                  <option name="javaModelName" value="WebUser" />
+                  <option name="moduleName" value="eowcSystem" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="useLomBokOnModel" value="true" />
+        <option name="xmlMapperPackage" value="mapperxml" />
+        <option name="xmlMapperPath" value="$PROJECT_DIR$/eowcSystem/src/main/resources" />
+      </ProjectProfile>
+    </option>
+    <option name="testConfigurations">
+      <list>
+        <TestConfiguration>
+          <option name="driverClass" value="com.mysql.cj.jdbc.Driver" />
+          <option name="from" value="history" />
+          <option name="intellij" value="false" />
+          <option name="order" value="-1" />
+          <option name="password" value="root" />
+          <option name="url" value="jdbc:mysql://localhost:3306/eowcsystem?serverTimezone=UTC" />
+          <option name="userName" value="root" />
+        </TestConfiguration>
+      </list>
+    </option>
+  </component>
+</project>

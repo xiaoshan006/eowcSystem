@@ -1,0 +1,6 @@
+
+"squid:ClassVariableVisibilityCheck"[Make IMAGE_FILE_EXTD a static final constant or non-public and provide accessors if needed.(ùÖ•’8ïû§©¬-
+xsquid:S3008"ZRename this field "IMAGE_FILE_EXTD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÖ•’8ïû§©¬-
+;squid:S2386"Make this member "protected".(ùÖ•’8ïû§©¬-
+]squid:S1118	":Add a private constructor to hide the implicit public one.(‡ÛŸÚıÿÿÿÿ8ïû§©¬-
+Ssquid:S1444"5Make this "public static IMAGE_FILE_EXTD" field final(ùÖ•’8ïû§©¬-

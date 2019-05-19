@@ -23,4 +23,5 @@ public interface IFrontDeskSettingService {
      */
     Map showInfos();
 
+
 }

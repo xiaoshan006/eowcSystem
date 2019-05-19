@@ -2,11 +2,10 @@ package cn.llanc.eowc_system.common;
 
 import lombok.Getter;
 
+import javax.ws.rs.GET;
+
 /**
  * @author liulc
- * @ClassName SystemConsts
- * @Description TODO
- * @date 2019/05/16
  **/
 @Getter
 public enum SystemConsts {
@@ -37,7 +36,14 @@ public enum SystemConsts {
      */
     GET_FILE_UPLOAD_TOKEN_SUCCESS("2005", "获取上传TOKEN成功"),
     GET_FILE_UPLOAD_TOKEN_ERROR("5002", "获取上传TOKEN失败"),
+
+    /**
+     * 信息获取
+     */
+    GET_INFORMATION_SUCCESS("2005", "数据获取成功"),
+    GET_INFORMATION_ERROR("5004", "数据获取失败"),
     ;
+
 
     String stateCode;
     String stateMsg;

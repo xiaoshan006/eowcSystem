@@ -38,6 +38,7 @@ public enum SystemConsts {
     GET_FILE_UPLOAD_TOKEN_SUCCESS("2005", "获取上传TOKEN成功"),
     GET_FILE_UPLOAD_TOKEN_ERROR("5002", "获取上传TOKEN失败"),
     ;
+
     String stateCode;
     String stateMsg;
 

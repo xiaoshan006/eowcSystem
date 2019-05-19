@@ -49,15 +49,15 @@ public class LoginAPI {
             password = inparam.get("password").toString();
         } catch (Exception e) {
             log.debug("入参为空");
-            return InterfaceParamUtils.getOutData(LOGIN_ERROR.getStateCode(), LOGIN_ERROR.getStateMsg(), null);
+            return InterfaceParamUtils.getOutData(LOGIN_ERROR, null);
         }
         if (null == userName || "" == userName || null == password || "" == password) {
-            return InterfaceParamUtils.getOutData(LOGIN_ERROR.getStateCode(), LOGIN_ERROR.getStateMsg(), null);
+            return InterfaceParamUtils.getOutData(LOGIN_ERROR, null);
         }
         log.debug("用户名密码校验");
         String role = LoginService.loginVerification(userName, password);
         if (LOGIN_ERROR.getStateCode().equals(role)) {
-            return InterfaceParamUtils.getOutData(LOGIN_ERROR.getStateCode(), LOGIN_ERROR.getStateMsg(), null);
+            return InterfaceParamUtils.getOutData(LOGIN_ERROR, null);
         }
         log.debug("用户名密码校验通过");
 
@@ -69,7 +69,7 @@ public class LoginAPI {
         //返回数据
         Map<String, String> resultMap = new HashMap<>();
         resultMap.put("role", role);
-        return InterfaceParamUtils.getOutData(LOGIN_SUCCESS.getStateCode(), LOGIN_SUCCESS.getStateMsg(), resultMap);
+        return InterfaceParamUtils.getOutData(LOGIN_SUCCESS, resultMap);
     }
 
 
@@ -88,12 +88,12 @@ public class LoginAPI {
             role = request.getSession().getAttribute("role").toString();
         } catch (Exception e) {
             log.debug("未获取到用户Session");
-            return InterfaceParamUtils.getOutData(USER_IS_NOT_LOGIN.getStateCode(), USER_IS_NOT_LOGIN.getStateMsg(), null);
+            return InterfaceParamUtils.getOutData(USER_IS_NOT_LOGIN, null);
         }
         Map<String, String> resultMap = new HashMap<>();
         resultMap.put("userName", userName);
         resultMap.put("role", role);
-        return InterfaceParamUtils.getOutData(USER_IS_LOINGED.getStateCode(), USER_IS_LOINGED.getStateMsg(), resultMap);
+        return InterfaceParamUtils.getOutData(USER_IS_LOINGED, resultMap);
     }
 
     /**
@@ -105,6 +105,6 @@ public class LoginAPI {
     @GET
     public String loginOut(@Context HttpServletRequest request) {
         request.getSession().invalidate();
-        return InterfaceParamUtils.getOutData(LOGINOUT_SUCCESS.getStateCode(), LOGINOUT_SUCCESS.getStateMsg(),null);
+        return InterfaceParamUtils.getOutData(LOGINOUT_SUCCESS,null);
     }
 }

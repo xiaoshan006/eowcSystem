@@ -36,10 +36,16 @@ public class FrontDeskSettingServiceImpl implements IFrontDeskSettingService {
     @Override
     public String updateInfos(Map inparam) {
         //入参转对象
-        CommonInfo newInfo = (CommonInfo) MapEntityConvert.mapToObject(inparam, CommonInfo.class);
+        CommonInfo newInfo = null;
+        try {
+            newInfo = (CommonInfo) MapEntityConvert.mapToObject(inparam, CommonInfo.class);
+        } catch (Exception e) {
+            log.debug("对象转换异常",e);
+            return UPDATE_INFO_ERROR.getStateCode();
+        }
         //设置主键
         newInfo.setCId("1");
-        int count = commonInfoMapper.insertSelective(newInfo);
+        int count = commonInfoMapper.updateByPrimaryKeySelective(newInfo);
         if (1 == count) {
             return UPDATE_INFO_SUCCESS.getStateCode();
         }

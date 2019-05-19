@@ -6,14 +6,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.Map;
 
-import static cn.llanc.eowc_system.common.SystemConsts.SHOW_INFO_SUCCESS;
+import static cn.llanc.eowc_system.common.SystemConsts.*;
 
 /**
  * @author liulc
@@ -39,7 +36,7 @@ public class FrontDeskSettingAPI {
     public String shwoInfo() {
         log.debug("获取前台数据信息");
         Map map = iFrontDeskSettingService.showInfos();
-        return InterfaceParamUtils.getOutData(SHOW_INFO_SUCCESS.getStateCode(), SHOW_INFO_SUCCESS.getStateMsg(), map);
+        return InterfaceParamUtils.getOutData(SHOW_INFO_SUCCESS, map);
     }
 
     /**
@@ -47,10 +44,21 @@ public class FrontDeskSettingAPI {
      * @param inparm
      * @return
      */
+    @Path("/updateInfo")
+    @PUT
     public String updateInfo(Map inparm) {
-        log.debug("入参解析");
+        log.debug("入参校验");
+        if (null == inparm) {
+            return InterfaceParamUtils.getOutData(UPDATE_INFO_ERROR, null);
+        }
+        log.debug("数据更新服务调用");
+        String resultCode = iFrontDeskSettingService.updateInfos(inparm);
 
-        return "";
+        if (UPDATE_INFO_SUCCESS.getStateCode().equals(resultCode)) {
+            return InterfaceParamUtils.getOutData(UPDATE_INFO_SUCCESS, null);
+        } else {
+            return InterfaceParamUtils.getOutData(UPDATE_INFO_ERROR, null);
+        }
     }
 
 }

@@ -47,8 +47,7 @@ public class FileUploadAPI {
         try {
             suffix = inParam.get("suffix").toString();
         } catch (Exception e) {
-            return InterfaceParamUtils.getOutData(GET_FILE_UPLOAD_TOKEN_ERROR.getStateCode(),
-                    GET_FILE_UPLOAD_TOKEN_ERROR.getStateMsg(), null);
+            return InterfaceParamUtils.getOutData(GET_FILE_UPLOAD_TOKEN_ERROR,null);
         }
 
         Map<String, Object> result = new HashMap<String, Object>();
@@ -77,11 +76,9 @@ public class FileUploadAPI {
             //生成实际路径名
             String randomFileName = UUID.randomUUID().toString() + suffix;
             result.put("fileUrl", randomFileName);
-            return InterfaceParamUtils.getOutData(GET_FILE_UPLOAD_TOKEN_SUCCESS.getStateCode(),
-                    GET_FILE_UPLOAD_TOKEN_SUCCESS.getStateMsg(), result);
+            return InterfaceParamUtils.getOutData(GET_FILE_UPLOAD_TOKEN_SUCCESS, result);
         } catch (Exception e) {
-            return InterfaceParamUtils.getOutData(GET_FILE_UPLOAD_TOKEN_ERROR.getStateCode(),
-                    GET_FILE_UPLOAD_TOKEN_ERROR.getStateMsg(), null);
+            return InterfaceParamUtils.getOutData(GET_FILE_UPLOAD_TOKEN_ERROR, null);
         }
     }
 

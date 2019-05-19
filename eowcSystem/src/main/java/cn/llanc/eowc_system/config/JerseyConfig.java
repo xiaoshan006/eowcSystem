@@ -11,7 +11,7 @@ import javax.ws.rs.ApplicationPath;
 /**
  * @author liulc
  * @ClassName JerseyConfig
- * @Description TODO
+ * @Description jersey配置类
  * @date 2019/05/16
  **/
 @Component

@@ -1,5 +1,8 @@
 package cn.llanc.eowc_system.service;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.core.Context;
+
 /**
  * @author liulc
  * @ClassName ILoginService
@@ -16,4 +19,13 @@ public interface ILoginService {
      * @return
      */
     String loginVerification(String userName, String password);
+
+    /**
+     * 找回密码
+     * @return
+     */
+    String sendCode(String inparam);
+
+
+
 }

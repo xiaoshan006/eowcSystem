@@ -1,9 +1,8 @@
 package cn.llanc.eowc_system.mapper;
-import org.apache.ibatis.annotations.Param;
-import java.util.List;
 
 import cn.llanc.eowc_system.domain.WebUser;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;import java.util.List;
 
 @Mapper
 public interface WebUserMapper {
@@ -19,13 +18,13 @@ public interface WebUserMapper {
 
     int updateByPrimaryKey(WebUser record);
 
-    List<String> findUPasswordByUName(@Param("uName")String uName);
+    String findUPasswordByUName(@Param("uName") String uName);
 
-    List<WebUser> findByAll(WebUser webUser);
+    WebUser findByAll(WebUser webUser);
 
-	List<Integer> findURoleByUNameAndUPassword(@Param("uName")String uName,@Param("uPassword")String uPassword);
+    Integer findURoleByUNameAndUPassword(@Param("uName") String uName, @Param("uPassword") String uPassword);
 
-
+    WebUser selectByUMobilePhone(@Param("uMobilePhone")String uMobilePhone);
 
 
 

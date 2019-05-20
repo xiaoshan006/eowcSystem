@@ -42,7 +42,28 @@ public enum SystemConsts {
      */
     GET_INFORMATION_SUCCESS("2005", "数据获取成功"),
     GET_INFORMATION_ERROR("5004", "数据获取失败"),
+
+    /**
+     * 找回密码
+     */
+    FIND_PASSWORD_SUCCESS("2006", "找回密码成功，请用新密码登录!"),
+    THIS_PHONE_NO_USRE("5005", "当前手机号无用户"),
+    FIND_PASSWORD_ERROR("5006", "找回密码失败"),
+    SEND_SMS_ERROR("5007", "获取验证码失败，请稍后再试"),
+    SEND_SMS_FREQUENT("5008", "获取验证码过于频繁！"),
+    SEND_SMS_SUCCESS("2007", "验证码发送成功，三分钟内有效!"),
+    CODE_VERIFY_SUCCESS("2008", "验证码校验通过"),
+    CODE_VERIFY_ERROR("5009", "验证码错误！"),
+    CHANGE_PASSWORD_ERROR("50010", "修改密码失败，请稍后再试！"),
+    GET_DATA_ERROR("50011", "获取数据失败!"),
+
+
+
+
+
+
     ;
+
 
 
     String stateCode;

@@ -1,7 +1,10 @@
 package cn.llanc.eowc_system.controller;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import cn.llanc.eowc_system.common.InterfaceParamUtils;
+import cn.llanc.eowc_system.domain.WebUser;
 import cn.llanc.eowc_system.service.ILoginService;
+import cn.llanc.eowc_system.service.IUserManagerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -30,7 +33,9 @@ import static cn.llanc.eowc_system.common.SystemConsts.USER_IS_LOINGED;
 @Consumes(MediaType.APPLICATION_JSON)
 public class LoginAPI {
     @Autowired
-    private ILoginService LoginService;
+    private ILoginService loginService;
+    @Autowired
+    private IUserManagerService userManagerService;
 
     /**
      * 登录校验API
@@ -55,12 +60,16 @@ public class LoginAPI {
             return InterfaceParamUtils.getOutData(LOGIN_ERROR, null);
         }
         log.debug("用户名密码校验");
-        String role = LoginService.loginVerification(userName, password);
+        String role = loginService.loginVerification(userName, password);
         if (LOGIN_ERROR.getStateCode().equals(role)) {
             return InterfaceParamUtils.getOutData(LOGIN_ERROR, null);
         }
         log.debug("用户名密码校验通过");
-
+        if (userName.length() == 11) {
+            //手机号登录，获取用户名
+            WebUser user = userManagerService.getUserByPhone(userName);
+            userName = user.getUName();
+        }
         log.debug("设置Session");
         HttpSession session = request.getSession();
         session.setAttribute("userName", userName);
@@ -106,5 +115,81 @@ public class LoginAPI {
     public String loginOut(@Context HttpServletRequest request) {
         request.getSession().invalidate();
         return InterfaceParamUtils.getOutData(LOGINOUT_SUCCESS,null);
+    }
+
+    /**
+     * 获取验证码
+     * @param inparam
+     * @param request
+     * @return
+     */
+    @Path("/verificationCode")
+    @POST
+    public String getVerificationCode(Map inparam,@Context HttpServletRequest request) {
+        log.debug("入参校验");
+        String phone = null;
+        try {
+            phone = inparam.get("phone").toString();
+        } catch (Exception e) {
+            log.debug("获取手机号失败", e);
+            return InterfaceParamUtils.getOutData(SEND_SMS_ERROR, null);
+        }
+        //此处可以添加手机号码请求频次校验
+
+        log.debug("发送验证码");
+        String code = loginService.sendCode(phone);
+        if (SEND_SMS_ERROR.getStateCode().equals(code)) {
+            return InterfaceParamUtils.getOutData(SEND_SMS_ERROR, null);
+        }
+        //验证码放入session
+        HttpSession session = request.getSession();
+        session.setAttribute("verificationCode", code);
+        session.setMaxInactiveInterval(180000);
+        return InterfaceParamUtils.getOutData(SEND_SMS_SUCCESS, null);
+    }
+
+    /**
+     * @param inparam
+     * @param request
+     * @return
+     */
+    @Path("/chanPwdByPhone")
+    @PUT
+    public String findPwd(Map inparam,@Context HttpServletRequest request) {
+        log.debug("入参校验");
+        String phone = "";
+        String code = "";
+        String pwd = "";
+        try {
+            phone = inparam.get("phone").toString();
+            code = inparam.get("code").toString();
+            pwd = inparam.get("pwd").toString();
+        } catch (Exception e) {
+            log.debug("获取信息失败", e);
+            return InterfaceParamUtils.getOutData(GET_DATA_ERROR, null);
+        }
+
+        //获取session中的验证码
+        String sessionCode = "";
+        try {
+            sessionCode = request.getSession().getAttribute("verificationCode").toString();
+            System.out.println(sessionCode);
+        } catch (Exception e) {
+            log.debug("未获取待服务器端验证码",e);
+            return InterfaceParamUtils.getOutData(CODE_VERIFY_ERROR, null);
+        }
+
+        if (sessionCode.equals(code)) {
+            //验证通过
+            String result = userManagerService.changeUserPwdByPhone(phone, pwd);
+            if (FIND_PASSWORD_SUCCESS.getStateCode().equals(result)) {
+                return InterfaceParamUtils.getOutData(FIND_PASSWORD_SUCCESS, null);
+            } else {
+                return InterfaceParamUtils.getOutData(FIND_PASSWORD_ERROR, null);
+            }
+        }else {
+            return InterfaceParamUtils.getOutData(CODE_VERIFY_ERROR, null);
+        }
+
     }
 }

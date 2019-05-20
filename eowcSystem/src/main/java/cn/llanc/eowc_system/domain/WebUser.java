@@ -10,24 +10,29 @@ import lombok.ToString;
 @ToString
 public class WebUser implements Serializable {
     /**
-    * 用户Id，主键u_id
-    */
+     * 用户Id，主键u_id
+     */
     private Integer uId;
 
     /**
-    * 登录用户名
-    */
+     * 登录用户名
+     */
     private String uName;
 
     /**
-    * 登录密码，加盐md5
-    */
+     * 登录密码，加盐md5
+     */
     private String uPassword;
 
     /**
-    * 用户角色：0 管理员，1 操作员
-    */
+     * 用户角色：0 管理员，1 操作员
+     */
     private Integer uRole;
+
+    /**
+     * 用户手机号
+     */
+    private String uMobilePhone;
 
     private static final long serialVersionUID = 1L;
 }

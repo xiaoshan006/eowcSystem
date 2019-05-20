@@ -36,7 +36,7 @@ public class WebUserMapperTest {
 
     @Test
     public void testfindUPasswordByUName() throws FileNotFoundException {
-        String md5Pwd = mapper.findUPasswordByUName("测试").get(0);
+        String md5Pwd = mapper.findUPasswordByUName("测试");
         boolean verify = MD5Utils.verify("123",md5Pwd);
         System.out.println(verify);
     }

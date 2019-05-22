@@ -19,7 +19,7 @@ import static cn.llanc.eowc_system.common.SystemConsts.GET_INFORMATION_SUCCESS;
 /**
  * @author liulc
  * @ClassName HomeAPI
- * @Description TODO
+ * @Description 前台页面首页
  * @date 2019/05/19
  **/
 @Slf4j

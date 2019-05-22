@@ -57,6 +57,17 @@ public enum SystemConsts {
     CHANGE_PASSWORD_ERROR("50010", "修改密码失败，请稍后再试！"),
     GET_DATA_ERROR("50011", "获取数据失败!"),
 
+    GET_ALL_USER_INFO_SUCCESS("2009", "获取用户信息成功！"),
+    GET_ALL_USER_INFO_ERROR("50012", "获取用户信息失败！"),
+    ADD_NEW_USER_SUCCESS("2010", "添加新用户成功!"),
+    ADD_NEW_USER_ERROR("50013", "添加新用户失败！"),
+    UPDATA_USER_INFO_SUCCESS("2011", "更用户成功成功！"),
+    UPDATA_USER_INFO_ERROR("50014", "更用户信息失败！"),
+    ADD_OR_UPDATA_USER_ERROR_PHONE_REPEAT("50015", "该手机号已存在！"),
+    ADD_OR_UPDATA_USER_ERROR_USERNAME_REPEAT("50016", "该用户名已存在！"),
+    ADD_OR_UPDATA_USER_PHONE_OR_USERNAME_NO_REPEAT("20013", "用户名和手机号均未占用！"),
+    DELETE_USER_SUCCESS("20012", "删除用户成功！"),
+    DELETE_USER_ERROR("50017", "删除用户失败！"),
 
 
 

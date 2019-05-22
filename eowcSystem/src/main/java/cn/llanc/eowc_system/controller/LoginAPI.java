@@ -141,6 +141,9 @@ public class LoginAPI {
         if (SEND_SMS_ERROR.getStateCode().equals(code)) {
             return InterfaceParamUtils.getOutData(SEND_SMS_ERROR, null);
         }
+        if (THIS_PHONE_NO_USRE.getStateCode().equals(code)) {
+            return InterfaceParamUtils.getOutData(THIS_PHONE_NO_USRE, null);
+        }
         //验证码放入session
         HttpSession session = request.getSession();
         session.setAttribute("verificationCode", code);

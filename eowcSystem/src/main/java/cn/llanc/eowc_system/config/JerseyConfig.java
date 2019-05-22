@@ -4,6 +4,7 @@ import cn.llanc.eowc_system.controller.FileUploadAPI;
 import cn.llanc.eowc_system.controller.FrontDeskSettingAPI;
 import cn.llanc.eowc_system.controller.LoginAPI;
 import cn.llanc.eowc_system.controller.front_end.HomeAPI;
+import cn.llanc.eowc_system.controller.tableManager.UserManagerAPI;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;
 
@@ -23,5 +24,6 @@ public class JerseyConfig extends ResourceConfig {
         register(FrontDeskSettingAPI.class);
         register(FileUploadAPI.class);
         register(HomeAPI.class);
+        register(UserManagerAPI.class);
     }
 }

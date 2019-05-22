@@ -1,4 +1,5 @@
 package cn.llanc.eowc_system.mapper;
+import java.util.Collection;
 
 import cn.llanc.eowc_system.domain.WebUser;
 import org.apache.ibatis.annotations.Mapper;
@@ -25,6 +26,17 @@ public interface WebUserMapper {
     Integer findURoleByUNameAndUPassword(@Param("uName") String uName, @Param("uPassword") String uPassword);
 
     WebUser selectByUMobilePhone(@Param("uMobilePhone")String uMobilePhone);
+
+    List<WebUser> selectAll();
+
+    int deleteByUIdIn(@Param("uIdCollection")Collection<Integer> uIdCollection);
+    WebUser findByUName(@Param("uName")String uName);
+
+	WebUser findByUMobilePhone(@Param("uMobilePhone")String uMobilePhone);
+
+
+
+
 
 
 

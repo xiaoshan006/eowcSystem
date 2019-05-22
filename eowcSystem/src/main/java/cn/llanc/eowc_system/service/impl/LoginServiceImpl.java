@@ -65,7 +65,7 @@ public class LoginServiceImpl implements ILoginService {
 
         WebUser user = webUserMapper.selectByUMobilePhone(inparam);
         if (null == user) {
-            return InterfaceParamUtils.getOutData(THIS_PHONE_NO_USRE, null);
+            return THIS_PHONE_NO_USRE.getStateCode();
         }
         String code = SMSUtils.sendSms(inparam);
         return code;

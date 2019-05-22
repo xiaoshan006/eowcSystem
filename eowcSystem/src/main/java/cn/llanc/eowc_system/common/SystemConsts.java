@@ -69,8 +69,13 @@ public enum SystemConsts {
     DELETE_USER_SUCCESS("20012", "删除用户成功！"),
     DELETE_USER_ERROR("50017", "删除用户失败！"),
 
-
-
+    /**
+     * 首页配置
+     */
+    UPDATE_HOME_PAGE_SETTING_SUCCESS("20014","数据更新成功!"),
+    UPDATE_HOME_PAGE_SETTING_ERROR("50018","数据更新失败!"),
+    HOME_PAGE_SETTING_SHOW_SUCCESS("20015","回显成功!"),
+    HOME_PAGE_SETTING_SHOW_ERROR("50019","回显失败!"),
 
 
     ;

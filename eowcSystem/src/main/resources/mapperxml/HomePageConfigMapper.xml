@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.llanc.eowc_system.mapper.HomePageConfigMapper">
+  <resultMap id="BaseResultMap" type="cn.llanc.eowc_system.domain.HomePageConfig">
+    <!--@mbg.generated-->
+    <id column="h_id" jdbcType="INTEGER" property="hId" />
+    <result column="h_client_div" jdbcType="VARCHAR" property="hClientDiv" />
+    <result column="h_service_div" jdbcType="VARCHAR" property="hServiceDiv" />
+    <result column="h_about_us_div" jdbcType="VARCHAR" property="hAboutUsDiv" />
+    <result column="h_talent_div" jdbcType="VARCHAR" property="hTalentDiv" />
+    <result column="h_evaluate_div" jdbcType="VARCHAR" property="hEvaluateDiv" />
+    <result column="h_product_div" jdbcType="VARCHAR" property="hProductDiv" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    h_id, h_client_div, h_service_div, h_about_us_div, h_talent_div, h_evaluate_div, 
+    h_product_div
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from home_page_config
+    where h_id = #{hId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from home_page_config
+    where h_id = #{hId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="h_id" keyProperty="hId" parameterType="cn.llanc.eowc_system.domain.HomePageConfig" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into home_page_config (h_client_div, h_service_div, h_about_us_div, 
+      h_talent_div, h_evaluate_div, h_product_div
+      )
+    values (#{hClientDiv,jdbcType=VARCHAR}, #{hServiceDiv,jdbcType=VARCHAR}, #{hAboutUsDiv,jdbcType=VARCHAR}, 
+      #{hTalentDiv,jdbcType=VARCHAR}, #{hEvaluateDiv,jdbcType=VARCHAR}, #{hProductDiv,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="h_id" keyProperty="hId" parameterType="cn.llanc.eowc_system.domain.HomePageConfig" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into home_page_config
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="hClientDiv != null">
+        h_client_div,
+      </if>
+      <if test="hServiceDiv != null">
+        h_service_div,
+      </if>
+      <if test="hAboutUsDiv != null">
+        h_about_us_div,
+      </if>
+      <if test="hTalentDiv != null">
+        h_talent_div,
+      </if>
+      <if test="hEvaluateDiv != null">
+        h_evaluate_div,
+      </if>
+      <if test="hProductDiv != null">
+        h_product_div,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="hClientDiv != null">
+        #{hClientDiv,jdbcType=VARCHAR},
+      </if>
+      <if test="hServiceDiv != null">
+        #{hServiceDiv,jdbcType=VARCHAR},
+      </if>
+      <if test="hAboutUsDiv != null">
+        #{hAboutUsDiv,jdbcType=VARCHAR},
+      </if>
+      <if test="hTalentDiv != null">
+        #{hTalentDiv,jdbcType=VARCHAR},
+      </if>
+      <if test="hEvaluateDiv != null">
+        #{hEvaluateDiv,jdbcType=VARCHAR},
+      </if>
+      <if test="hProductDiv != null">
+        #{hProductDiv,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.llanc.eowc_system.domain.HomePageConfig">
+    <!--@mbg.generated-->
+    update home_page_config
+    <set>
+      <if test="hClientDiv != null">
+        h_client_div = #{hClientDiv,jdbcType=VARCHAR},
+      </if>
+      <if test="hServiceDiv != null">
+        h_service_div = #{hServiceDiv,jdbcType=VARCHAR},
+      </if>
+      <if test="hAboutUsDiv != null">
+        h_about_us_div = #{hAboutUsDiv,jdbcType=VARCHAR},
+      </if>
+      <if test="hTalentDiv != null">
+        h_talent_div = #{hTalentDiv,jdbcType=VARCHAR},
+      </if>
+      <if test="hEvaluateDiv != null">
+        h_evaluate_div = #{hEvaluateDiv,jdbcType=VARCHAR},
+      </if>
+      <if test="hProductDiv != null">
+        h_product_div = #{hProductDiv,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where h_id = #{hId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.llanc.eowc_system.domain.HomePageConfig">
+    <!--@mbg.generated-->
+    update home_page_config
+    set h_client_div = #{hClientDiv,jdbcType=VARCHAR},
+      h_service_div = #{hServiceDiv,jdbcType=VARCHAR},
+      h_about_us_div = #{hAboutUsDiv,jdbcType=VARCHAR},
+      h_talent_div = #{hTalentDiv,jdbcType=VARCHAR},
+      h_evaluate_div = #{hEvaluateDiv,jdbcType=VARCHAR},
+      h_product_div = #{hProductDiv,jdbcType=VARCHAR}
+    where h_id = #{hId,jdbcType=INTEGER}
+  </update>
+</mapper>

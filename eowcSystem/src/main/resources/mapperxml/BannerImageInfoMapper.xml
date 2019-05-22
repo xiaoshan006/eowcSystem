@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.llanc.eowc_system.mapper.BannerImageInfoMapper">
+  <resultMap id="BaseResultMap" type="cn.llanc.eowc_system.domain.BannerImageInfo">
+    <!--@mbg.generated-->
+    <id column="b_Id" jdbcType="INTEGER" property="bId" />
+    <result column="b_src" jdbcType="VARCHAR" property="bSrc" />
+    <result column="b_title" jdbcType="VARCHAR" property="bTitle" />
+    <result column="b_desc" jdbcType="VARCHAR" property="bDesc" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    b_Id, b_src, b_title, b_desc
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from banner_image_info
+    where b_Id = #{bId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from banner_image_info
+    where b_Id = #{bId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="b_Id" keyProperty="bId" parameterType="cn.llanc.eowc_system.domain.BannerImageInfo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into banner_image_info (b_src, b_title, b_desc
+      )
+    values (#{bSrc,jdbcType=VARCHAR}, #{bTitle,jdbcType=VARCHAR}, #{bDesc,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="b_Id" keyProperty="bId" parameterType="cn.llanc.eowc_system.domain.BannerImageInfo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into banner_image_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bSrc != null">
+        b_src,
+      </if>
+      <if test="bTitle != null">
+        b_title,
+      </if>
+      <if test="bDesc != null">
+        b_desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bSrc != null">
+        #{bSrc,jdbcType=VARCHAR},
+      </if>
+      <if test="bTitle != null">
+        #{bTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="bDesc != null">
+        #{bDesc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.llanc.eowc_system.domain.BannerImageInfo">
+    <!--@mbg.generated-->
+    update banner_image_info
+    <set>
+      <if test="bSrc != null">
+        b_src = #{bSrc,jdbcType=VARCHAR},
+      </if>
+      <if test="bTitle != null">
+        b_title = #{bTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="bDesc != null">
+        b_desc = #{bDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where b_Id = #{bId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.llanc.eowc_system.domain.BannerImageInfo">
+    <!--@mbg.generated-->
+    update banner_image_info
+    set b_src = #{bSrc,jdbcType=VARCHAR},
+      b_title = #{bTitle,jdbcType=VARCHAR},
+      b_desc = #{bDesc,jdbcType=VARCHAR}
+    where b_Id = #{bId,jdbcType=INTEGER}
+  </update>
+</mapper>

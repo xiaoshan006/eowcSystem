@@ -1,7 +1,9 @@
 package cn.llanc.eowc_system.mapper;
 
 import cn.llanc.eowc_system.domain.HomePageConfig;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface HomePageConfigMapper {
     int deleteByPrimaryKey(Integer hId);
 

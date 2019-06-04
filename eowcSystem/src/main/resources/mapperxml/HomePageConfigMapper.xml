@@ -10,11 +10,18 @@
     <result column="h_talent_div" jdbcType="VARCHAR" property="hTalentDiv" />
     <result column="h_evaluate_div" jdbcType="VARCHAR" property="hEvaluateDiv" />
     <result column="h_product_div" jdbcType="VARCHAR" property="hProductDiv" />
+    <result column="h_service_title" jdbcType="VARCHAR" property="hServiceTitle" />
+    <result column="h_service_title_desc" jdbcType="VARCHAR" property="hServiceTitleDesc" />
+    <result column="h_product_title" jdbcType="VARCHAR" property="hProductTitle" />
+    <result column="h_product_title_desc" jdbcType="VARCHAR" property="hProductTitleDesc" />
+    <result column="h_talent_title" jdbcType="VARCHAR" property="hTalentTitle" />
+    <result column="h_talent_title_desc" jdbcType="VARCHAR" property="hTalentTitleDesc" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
     h_id, h_client_div, h_service_div, h_about_us_div, h_talent_div, h_evaluate_div, 
-    h_product_div
+    h_product_div, h_service_title, h_service_title_desc, h_product_title, h_product_title_desc, 
+    h_talent_title, h_talent_title_desc
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--@mbg.generated-->
@@ -31,10 +38,14 @@
   <insert id="insert" keyColumn="h_id" keyProperty="hId" parameterType="cn.llanc.eowc_system.domain.HomePageConfig" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into home_page_config (h_client_div, h_service_div, h_about_us_div, 
-      h_talent_div, h_evaluate_div, h_product_div
+      h_talent_div, h_evaluate_div, h_product_div, 
+      h_service_title, h_service_title_desc, h_product_title, 
+      h_product_title_desc, h_talent_title, h_talent_title_desc
       )
     values (#{hClientDiv,jdbcType=VARCHAR}, #{hServiceDiv,jdbcType=VARCHAR}, #{hAboutUsDiv,jdbcType=VARCHAR}, 
-      #{hTalentDiv,jdbcType=VARCHAR}, #{hEvaluateDiv,jdbcType=VARCHAR}, #{hProductDiv,jdbcType=VARCHAR}
+      #{hTalentDiv,jdbcType=VARCHAR}, #{hEvaluateDiv,jdbcType=VARCHAR}, #{hProductDiv,jdbcType=VARCHAR}, 
+      #{hServiceTitle,jdbcType=VARCHAR}, #{hServiceTitleDesc,jdbcType=VARCHAR}, #{hProductTitle,jdbcType=VARCHAR}, 
+      #{hProductTitleDesc,jdbcType=VARCHAR}, #{hTalentTitle,jdbcType=VARCHAR}, #{hTalentTitleDesc,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" keyColumn="h_id" keyProperty="hId" parameterType="cn.llanc.eowc_system.domain.HomePageConfig" useGeneratedKeys="true">
@@ -59,6 +70,24 @@
       <if test="hProductDiv != null">
         h_product_div,
       </if>
+      <if test="hServiceTitle != null">
+        h_service_title,
+      </if>
+      <if test="hServiceTitleDesc != null">
+        h_service_title_desc,
+      </if>
+      <if test="hProductTitle != null">
+        h_product_title,
+      </if>
+      <if test="hProductTitleDesc != null">
+        h_product_title_desc,
+      </if>
+      <if test="hTalentTitle != null">
+        h_talent_title,
+      </if>
+      <if test="hTalentTitleDesc != null">
+        h_talent_title_desc,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="hClientDiv != null">
@@ -78,6 +107,24 @@
       </if>
       <if test="hProductDiv != null">
         #{hProductDiv,jdbcType=VARCHAR},
+      </if>
+      <if test="hServiceTitle != null">
+        #{hServiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="hServiceTitleDesc != null">
+        #{hServiceTitleDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="hProductTitle != null">
+        #{hProductTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="hProductTitleDesc != null">
+        #{hProductTitleDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="hTalentTitle != null">
+        #{hTalentTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="hTalentTitleDesc != null">
+        #{hTalentTitleDesc,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -103,6 +150,24 @@
       <if test="hProductDiv != null">
         h_product_div = #{hProductDiv,jdbcType=VARCHAR},
       </if>
+      <if test="hServiceTitle != null">
+        h_service_title = #{hServiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="hServiceTitleDesc != null">
+        h_service_title_desc = #{hServiceTitleDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="hProductTitle != null">
+        h_product_title = #{hProductTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="hProductTitleDesc != null">
+        h_product_title_desc = #{hProductTitleDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="hTalentTitle != null">
+        h_talent_title = #{hTalentTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="hTalentTitleDesc != null">
+        h_talent_title_desc = #{hTalentTitleDesc,jdbcType=VARCHAR},
+      </if>
     </set>
     where h_id = #{hId,jdbcType=INTEGER}
   </update>
@@ -114,7 +179,13 @@
       h_about_us_div = #{hAboutUsDiv,jdbcType=VARCHAR},
       h_talent_div = #{hTalentDiv,jdbcType=VARCHAR},
       h_evaluate_div = #{hEvaluateDiv,jdbcType=VARCHAR},
-      h_product_div = #{hProductDiv,jdbcType=VARCHAR}
+      h_product_div = #{hProductDiv,jdbcType=VARCHAR},
+      h_service_title = #{hServiceTitle,jdbcType=VARCHAR},
+      h_service_title_desc = #{hServiceTitleDesc,jdbcType=VARCHAR},
+      h_product_title = #{hProductTitle,jdbcType=VARCHAR},
+      h_product_title_desc = #{hProductTitleDesc,jdbcType=VARCHAR},
+      h_talent_title = #{hTalentTitle,jdbcType=VARCHAR},
+      h_talent_title_desc = #{hTalentTitleDesc,jdbcType=VARCHAR}
     where h_id = #{hId,jdbcType=INTEGER}
   </update>
 </mapper>

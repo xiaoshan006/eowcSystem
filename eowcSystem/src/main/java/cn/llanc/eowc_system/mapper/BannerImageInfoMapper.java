@@ -1,7 +1,11 @@
 package cn.llanc.eowc_system.mapper;
+import org.apache.ibatis.annotations.Param;
+import java.util.List;
 
 import cn.llanc.eowc_system.domain.BannerImageInfo;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface BannerImageInfoMapper {
     int deleteByPrimaryKey(Integer bId);
 
@@ -14,4 +18,8 @@ public interface BannerImageInfoMapper {
     int updateByPrimaryKeySelective(BannerImageInfo record);
 
     int updateByPrimaryKey(BannerImageInfo record);
+
+    List<BannerImageInfo> findAll();
+
+
 }

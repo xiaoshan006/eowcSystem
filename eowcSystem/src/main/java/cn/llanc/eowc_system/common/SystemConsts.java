@@ -57,6 +57,9 @@ public enum SystemConsts {
     CHANGE_PASSWORD_ERROR("50010", "修改密码失败，请稍后再试！"),
     GET_DATA_ERROR("50011", "获取数据失败!"),
 
+    /**
+     * 用户信息管理
+     */
     GET_ALL_USER_INFO_SUCCESS("2009", "获取用户信息成功！"),
     GET_ALL_USER_INFO_ERROR("50012", "获取用户信息失败！"),
     ADD_NEW_USER_SUCCESS("2010", "添加新用户成功!"),
@@ -72,19 +75,59 @@ public enum SystemConsts {
     /**
      * 首页配置
      */
-    UPDATE_HOME_PAGE_SETTING_SUCCESS("20014","数据更新成功!"),
-    UPDATE_HOME_PAGE_SETTING_ERROR("50018","数据更新失败!"),
-    HOME_PAGE_SETTING_SHOW_SUCCESS("20015","回显成功!"),
-    HOME_PAGE_SETTING_SHOW_ERROR("50019","回显失败!"),
+    UPDATE_HOME_PAGE_CONFIG_SUCCESS("20014","数据更新成功!"),
+    UPDATE_HOME_PAGE_CONFIG_ERROR("50018","数据更新失败!"),
+    SHOW_HOME_PAGE_CONFIG_SUCCESS("20015","首页配置信息获取成功!"),
+    SHOW_HOME_PAGE_CONFIG_ERROR("50019","首页配置信息获取失败!"),
+
+    /**
+     * 首页轮播图，顶部和关于我们
+     */
+    UPDATE_BANNER_IMAGE_SUCCESS("20015","图片信息保存成功！"),
+    UPDATE_BANNER_IMAGE_ERROR("50020","图片信息保存成功！"),
+    SHOW_BANNER_INFO_SUCCESS("20016", "轮播图信息获取成功！"),
+    SHOW_BANNER_INFO_ERROR("50021", "轮播图信息获取失败！"),
+
+    /**
+     * 首页供应商信息
+     */
+    SHOW_CLIENT_INFO_SUCCESS("20017","获取供应商信息成功！"),
+
+    /**
+     * 首页服务信息
+     */
+    SHOW_SERVICE_INFO_SUCCESS("20018", "获取服务信息成功！"),
+
+    /**
+     * 首页产品信息
+     */
+    SHOW_PRODUCT_INFO_SUCCESS("20019", "获取产品信息成功！"),
+
+    /**
+     * 首页评价信息
+     */
+    SHOW_EVALUATE_INFO_SUCCESS("20020", "获取评价信息成功！"),
+
+    /**
+     * 首页人才信息
+     */
+    SHOW_TALENT_INFO_SUCCESS("20021", "获取人才信息成功！"),
+
+    /**
+     * 首页关于信息
+     */
+    SHOW_ABOUT_INFO_SUCCESS("20022", "获取关于信息成功！"),
 
 
     ;
-
-
-
+    /**
+     * 状态码
+     */
     String stateCode;
+    /**
+     * 状态信息
+     */
     String stateMsg;
-
     SystemConsts(String stateCode, String stateMsg) {
         this.stateCode = stateCode;
         this.stateMsg = stateMsg;

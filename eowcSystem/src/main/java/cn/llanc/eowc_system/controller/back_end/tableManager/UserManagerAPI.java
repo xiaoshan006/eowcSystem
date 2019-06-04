@@ -1,4 +1,4 @@
-package cn.llanc.eowc_system.controller.tableManager;
+package cn.llanc.eowc_system.controller.back_end.tableManager;
 
 import cn.llanc.eowc_system.common.InterfaceParamUtils;
 import cn.llanc.eowc_system.domain.WebUser;

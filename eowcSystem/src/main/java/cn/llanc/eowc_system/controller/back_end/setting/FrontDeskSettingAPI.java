@@ -1,4 +1,4 @@
-package cn.llanc.eowc_system.controller;
+package cn.llanc.eowc_system.controller.back_end.setting;
 
 import cn.llanc.eowc_system.common.InterfaceParamUtils;
 import cn.llanc.eowc_system.service.IFrontDeskSettingService;

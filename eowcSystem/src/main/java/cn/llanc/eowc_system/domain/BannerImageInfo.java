@@ -10,23 +10,23 @@ import lombok.ToString;
 @ToString
 public class BannerImageInfo implements Serializable {
     /**
-    * 轮播图Id,主键
-    */
+     * 轮播图Id,主键
+     */
     private Integer bId;
 
     /**
-    * 图片地址
-    */
+     * 图片地址
+     */
     private String bSrc;
 
     /**
-    * 图片标题
-    */
+     * 图片标题
+     */
     private String bTitle;
 
     /**
-    * 图片描述
-    */
+     * 图片描述
+     */
     private String bDesc;
 
     private static final long serialVersionUID = 1L;

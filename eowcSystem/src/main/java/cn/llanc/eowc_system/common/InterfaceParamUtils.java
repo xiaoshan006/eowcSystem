@@ -15,6 +15,21 @@ import static com.alibaba.fastjson.serializer.SerializerFeature.WriteMapNullValu
  **/
 public class InterfaceParamUtils {
     /**
+     * 出参(重载)
+     * @param systemCode 枚举
+     * @param resultMap
+     * @return
+     */
+    public static String getOutData(SystemConsts systemCode, Map resultMap) {
+        Map<String, Object> outData = new HashMap<>();
+        outData.put("stateCode", systemCode.getStateCode());
+        outData.put("stateMsg", systemCode.getStateMsg());
+        outData.put("result", resultMap);
+        return JSONObject.toJSONString(outData,WriteMapNullValue);
+    }
+
+
+    /**
      * 出参
      * @param stateCode 状态码
      * @param stateMsg 状态信息
@@ -29,18 +44,5 @@ public class InterfaceParamUtils {
         return JSONObject.toJSONString(outData,WriteMapNullValue);
     }
 
-    /**
-     * 出参(重载)
-     * @param systemCode 枚举
-     * @param resultMap
-     * @return
-     */
-    public static String getOutData(SystemConsts systemCode, Map resultMap) {
-        Map<String, Object> outData = new HashMap<>();
-        outData.put("stateCode", systemCode.getStateCode());
-        outData.put("stateMsg", systemCode.getStateMsg());
-        outData.put("result", resultMap);
-        return JSONObject.toJSONString(outData,WriteMapNullValue);
-    }
 
 }

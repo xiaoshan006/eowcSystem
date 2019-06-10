@@ -30,8 +30,8 @@ import static cn.llanc.eowc_system.common.SystemConsts.GET_FILE_UPLOAD_TOKEN_SUC
 @Consumes(MediaType.APPLICATION_JSON)
 public class FileUploadAPI {
 
-    private static final String accessKey = "5eoVeFNjB8cBPEarqdIRR5dJlI7UEk2oGNgyXCtK";    //访问秘钥
-    private static final String secretKey = "jgqC8ngWdMj7UveD8HOBhPnAO8jDcxWDtwPydp6S";    //授权秘钥
+    private static final String accessKey = "XXX";    //访问秘钥
+    private static final String secretKey = "XXX";    //授权秘钥
     private static final String bucket = "graduationproject";       //存储空间名称
     private static final String domain = "prn5kvu34.bkt.clouddn.com";       //外链域名
 

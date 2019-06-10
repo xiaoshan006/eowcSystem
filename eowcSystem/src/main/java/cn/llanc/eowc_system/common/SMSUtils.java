@@ -29,7 +29,7 @@ public class SMSUtils {
     /**
      * 密钥
      */
-    private static String appkey = "0488d0402407debaf9e68020ed85b3a5";
+    private static String appkey = "XXX";
 
     /**
      * 模板ID
